@@ -4,20 +4,20 @@
 направление сдвига (по умолчанию влево (False)).
 '''
 
-list = [9, 29, 34, 36, 40, 50, 51, 53, 57, 78, 85, 88, 88, 89, 92, 94, 94, 95, 99, 100]
-
-def move_num(list, x, N, bool):
-    bool_True = True
-    bool_false = False
-    if True:
-        print(' +', list[x+N])
-        list[x+N] = x
-        print(list)
+x = 123456789
+n = 3
+right = True
+left = False
 
 
+def num(x, n, move_right = False):
+    cut = str(x)
+    if move_right:
+        y = cut[-n:] + cut[0:-n]
+        print(y)
     else:
-        print(' -', list[x-N])
+        y = cut[n:] + cut[0:n]
+        print(y)
 
 
-move_num(list, x=4, N=3, bool=False)
-
+num(x, n, True)
