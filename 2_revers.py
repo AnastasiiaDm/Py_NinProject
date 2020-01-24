@@ -5,25 +5,21 @@
     список), чтоб развернуть список, метод `join()`
     - строка `ascii_uppercase` из модуля `string` (её можно получить если сделать импорт `from string import
     ascii_uppercase`), она содержит все буквы латинского алфавита.'''
-from string import ascii_uppercase
 
 
-def new_system(lst, key_value, left=0, right=None):
-    if right is None:
-        right = len(lst)
+def new_system():
+    num = int(input())
+    base = int(input("Base (2-36): "))
+    if not (2 <= base <= 36):
+        quit()
 
-    middle = (left + right) // 2
-    while lst[middle] != key_value and left <= right:
-        if lst[middle] < key_value:
-            left = middle + 1
-        else:
-            right = middle - 1
+    newNum = ''
 
-        middle = (left + right) // 2
+    while num > 0:
+        newNum = str(num % base) + newNum
+        num //= base
 
-    return (True, middle) if not left > right else (False, middle+1)
+    print(newNum)
 
 
-l = [9, 29.5, 34, 36, 40, 50, 51, 53, 57, 78, 85, 88, 88, 89, 92, 94, 94, 95, 99, 100]
-print(new_system(l, 54, 0))
-print(new_system(l, 88, 0))
+new_system()
