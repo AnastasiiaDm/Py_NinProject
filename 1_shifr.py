@@ -3,7 +3,7 @@
 Написать также функцию `XOR_uncipher`, которая по зашифрованной строке и ключу восстанавливает исходную строку.'''
 
 string = 'XOR_cipher'
-key = 'key'
+key = 'keykeykeykeykeykeykeykeykeykeykey'
 
 
 def XOR_cipher(m, n):
